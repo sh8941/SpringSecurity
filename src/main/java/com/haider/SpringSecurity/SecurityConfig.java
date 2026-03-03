@@ -29,6 +29,8 @@ public class SecurityConfig{
         return http.build();
     }
 
+    // git test comment
+
     UserDetails user = User.withUsername("user")
             .password("{noop}userPass")
             .roles("USER").build();
