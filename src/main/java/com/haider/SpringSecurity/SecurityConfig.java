@@ -31,16 +31,15 @@ public class SecurityConfig{
 
     // git test comment
 
-    UserDetails user = User.withUsername("user")
-            .password("{noop}userPass")
-            .roles("USER").build();
-
-    UserDetails admin = User.withUsername("admin")
-            .password("{noop}adminPass")
-            .roles("ADMIN").build();
-
     @Bean
     public UserDetailsService userDetailsService() {
+        UserDetails user = User.withUsername("user")
+                .password("{noop}userPass")
+                .roles("USER").build();
+
+        UserDetails admin = User.withUsername("admin")
+                .password("{noop}adminPass")
+                .roles("ADMIN").build();
         return new InMemoryUserDetailsManager(user, admin);
     }
 }
